@@ -49,6 +49,7 @@ if __name__ == '__main__':
     loop.create_task(greeting('гость'))
     loop.create_task(greeting('пользователь'))
     loop.create_task(greeting('администратор'))
+
     loop.run_in_executor(None, blocking_sleep)
 
     thread_pool = concurrent.futures.ThreadPoolExecutor()

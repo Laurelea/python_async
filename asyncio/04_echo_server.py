@@ -15,6 +15,8 @@ async def client_connected(reader: StreamReader, writer: StreamWriter):
     address = writer.get_extra_info('peername')
     logger.info('Start serving %s', address)
 
+
+
     while True:
         # Через StreamReader нужно получать данные от клиента.
         data = await reader.read(1024)

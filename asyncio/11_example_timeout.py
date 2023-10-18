@@ -22,7 +22,7 @@ async def main():
 
     # Аргумент timeout (float или int) указан в секундах. Он используется для управления временем ожидания результатов
     # задач, прежде чем приостановить невыполненные.
-    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED, timeout=None)
+    done, pending = await asyncio.wait_for(tasks, return_when=asyncio.FIRST_COMPLETED, timeout=None)
 
     for task in pending:
         task.cancel()
